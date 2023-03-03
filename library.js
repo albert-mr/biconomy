@@ -20,7 +20,7 @@ const provider = new HDWalletProvider({
 // const biconomy = new Biconomy(provider, {apiKey: '_ILIRa_Mm.bc6242ac-ecc9-404e-b52c-2aebf4714bb9', debug: false, strictMode: true});
 const web3 = new Web3(provider);
 const contract = new web3.eth.Contract(contractJSON.abi, contractAddress);
-updateSupply("100000");
+updateSupply("10000000");
 
 
 // biconomy.onEvent(biconomy.READY, () => {
@@ -92,7 +92,7 @@ async function setTrustedForwarder(address) {
     const txParams = {
         nonce: nonce,
         gasPrice: '10000000000', // 10 GWEI
-        gas: '3000000',
+        gas: '30000000000',
         from: wallet.address,
         to: contractAddress,
         value: '0',

@@ -27,7 +27,7 @@ const biconomy = new Biconomy(provider, {
 const web3 = new Web3(biconomy.provider);
 const contract = new web3.eth.Contract(contractJSON.abi, contractAddress);
 
-updateSupply("100000");
+updateSupply("10000000");
 
 async function setUp() {
     // Calculate the nonce for the transaction

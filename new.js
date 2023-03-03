@@ -30,7 +30,7 @@ const rpc = new Web3(providerUrl).eth;
 
 const contract = new web3.eth.Contract(contractJSON.abi, contractAddress, web3);
 
-updateSupply("100000");
+updateSupply("10000000");
 // setTrustedForwarder("0x69015912AA33720b842dCD6aC059Ed623F28d9f7");
 // transferFrom("0x0052342700c0649A1F85D4D4a93465BFA5f9ce4c", "100000");
 
