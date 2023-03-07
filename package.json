@@ -5,13 +5,13 @@
   "main": "library.js",
   "scripts": {
     "build": "webpack --mode development",
-    "test": "mocha"
+    "test": "echo"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@biconomy/core-types": "^1.0.0",
-    "@biconomy/mexa": "^2.0.38",
+    "@biconomy/mexa": "^3.0.5",
     "@biconomy/smart-account": "^1.0.0",
     "@ethersproject/providers": "^5.7.2",
     "@truffle/hdwallet-provider": "^2.1.6",

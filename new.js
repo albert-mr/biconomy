@@ -37,11 +37,18 @@ updateSupply("10000000");
 async function updateSupply(supply) {
 	await biconomy.init();
 
+	const data = contract.methods.updateSupply(web3.utils.toWei(supply, "ether")).encodeABI();
+	
+	const gas = await contract.methods.updateSupply(web3.utils.toWei(supply, "ether")).estimateGas(
+		{
+			from: wallet.address
+		});
+
 	const txParams = {
 		chainId: await rpc.getChainId(),
 		nonce: await rpc.getTransactionCount(wallet.address),
 		gasPrice: "10000000000", // 10 GWEI
-		gas: "3000000",
+		gas: "3000000000000000",
 		from: wallet.address,
 		to: contractAddress,
 		value: "0",
@@ -67,7 +74,7 @@ async function setTrustedForwarder(address) {
 		chainId: await rpc.getChainId(),
 		nonce: await rpc.getTransactionCount(wallet.address),
 		gasPrice: "10000000000", // 10 GWEI
-		gas: "3000000",
+		gas: "300000000000000",
 		from: wallet.address,
 		to: contractAddress,
 		value: "0",
@@ -94,7 +101,7 @@ async function transferFrom(addressTo, amount) {
 		chainId: await rpc.getChainId(),
 		nonce: await rpc.getTransactionCount(wallet.address),
 		gasPrice: "10000000000", // 10 GWEI
-		gas: "3000000",
+		gas: "3000000000000000",
 		from: wallet.address,
 		to: contractAddress,
 		value: "0",
